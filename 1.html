@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora Simple</title>
+</head>
+<body>
+    <h1>Calculadora Simple</h1>
+    <button onclick="alert(calcular(5, 3, '+'))">5 + 3</button>
+
+    <script>
+function calculadora(num1, num2, operador) {
+    switch (operador) {
+        case '+': return num1 + num2;
+        case '-': return num1 - num2;
+        case '*': return num1 * num2;
+        case '/': return num2 !== 0 ? num1 / num2 : 'Error: División por cero';
+        default: return 'Operador no válido';
+    }
+}
+
+    </script>
+</body>
+</html>

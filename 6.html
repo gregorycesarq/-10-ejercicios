@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Suma de Elementos de un Arreglo</title>
+</head>
+<body>
+    <h1>Suma de Elementos de un Arreglo</h1>
+    <button onclick="alert(sumaElementos([1, 2, 3, 4, 5]))">Sumar [1, 2, 3, 4, 5]</button>
+
+    <script>
+        function sumaElementos(arreglo) {
+            return arreglo.reduce((total, num) => total + num, 0);
+        }
+    </script>
+</body>
+</html>

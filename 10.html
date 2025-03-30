@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Números Impares</title>
+</head>
+<body>
+    <h1>Números Impares</h1>
+    <button onclick="alert(numerosImpares(10))">Impares hasta 10</button>
+
+    <script>
+        function numerosImpares(n) {
+            const impares = [];
+            for (let i = 1; i <= n; i++) {
+                if (i % 2 !== 0) {
+                    impares.push(i);
+                }
+            }
+            return impares;
+        }
+    </script>
+</body>
+</html>

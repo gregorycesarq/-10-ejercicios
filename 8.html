@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inversor de Cadena</title>
+</head>
+<body>
+    <h1>Inversor de Cadena</h1>
+    <input type="text" id="invertirInput" placeholder="Escribe una cadena">
+    <button onclick="alert(invertirCadena(document.getElementById('invertirInput').value))">Invertir</button>
+
+    <script>
+        function invertirCadena(cadena) {
+            return cadena.split('').reverse().join('');
+        }
+    </script>
+</body>
+</html>
