@@ -6,20 +6,55 @@
     <title>Calculadora Simple</title>
 </head>
 <body>
+
     <h1>Calculadora Simple</h1>
-    <button onclick="alert(calcular(5, 3, '+'))">5 + 3</button>
+    
+    <label for="num1">Número 1:</label>
+    <input type="number" id="num1">
+    <br><br>
+
+    <label for="num2">Número 2:</label>
+    <input type="number" id="num2">
+    <br><br>
+
+    <label for="operador">Operador (+, -, *, /):</label>
+    <input type="text" id="operador">
+    <br><br>
+
+    <button onclick="calcular()">Calcular</button>
+
+    <h2>Resultado:</h2>
+    <p id="resultado"></p>
 
     <script>
-function calculadora(num1, num2, operador) {
-    switch (operador) {
-        case '+': return num1 + num2;
-        case '-': return num1 - num2;
-        case '*': return num1 * num2;
-        case '/': return num2 !== 0 ? num1 / num2 : 'Error: División por cero';
-        default: return 'Operador no válido';
-    }
-}
+        function calculadora(num1, num2, operador) {
+            switch (operador) {
+                case '+':
+                    return num1 + num2;
+                case '-':
+                    return num1 - num2;
+                case '*':
+                    return num1 * num2;
+                case '/':
+                    if (num2 !== 0) {
+                        return num1 / num2;
+                    } else {
+                        return "Error: División por cero";
+                    }
+                default:
+                    return "Operador no válido";
+            }
+        }
 
+        function calcular() {
+            let num1 = parseFloat(document.getElementById("num1").value);
+            let num2 = parseFloat(document.getElementById("num2").value);
+            let operador = document.getElementById("operador").value;
+            let resultado = calculadora(num1, num2, operador);
+
+            document.getElementById("resultado").innerText = "Resultado: " + resultado;
+        }
     </script>
+
 </body>
 </html>
