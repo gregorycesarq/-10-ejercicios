@@ -3,16 +3,30 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Suma de Elementos de un Arreglo</title>
+    <title>Factorial de un Número</title>
 </head>
 <body>
-    <h1>Suma de Elementos de un Arreglo</h1>
-    <button onclick="alert(sumaElementos([1, 2, 3, 4, 5]))">Sumar [1, 2, 3, 4, 5]</button>
+
+    <h1>Factorial de un Número</h1>
+    <input type="number" id="numero" placeholder="Introduce un número">
+    <button onclick="calcularFactorial()">Calcular Factorial</button>
+    <p id="resultado"></p>
 
     <script>
-        function sumaElementos(arreglo) {
-            return arreglo.reduce((total, num) => total + num, 0);
+        function calcularFactorial() {
+            let num = parseInt(document.getElementById("numero").value);
+            let resultado = 1;
+            for (let i = 1; i <= num; i++) {
+                resultado *= i;
+            }
+            document.getElementById("resultado").innerText = "Factorial: " + resultado;
         }
     </script>
+
 </body>
 </html>
+
+
+
+
+
