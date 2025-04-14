@@ -6,13 +6,23 @@
     <title>Generador de Números Aleatorios</title>
 </head>
 <body>
+
     <h1>Generador de Números Aleatorios</h1>
-    <button onclick="alert(generarNumeroAleatorio(1, 100))">Generar</button>
+    <label for="min">Mínimo: </label>
+    <input type="number" id="min" value="1">
+    <label for="max">Máximo: </label>
+    <input type="number" id="max" value="100">
+    <button onclick="generarNumero()">Generar Número</button>
+    <p id="resultado"></p>
 
     <script>
-        function generarNumeroAleatorio(min, max) {
-            return Math.floor(Math.random() * (max - min + 1)) + min;
+        function generarNumero() {
+            let min = parseInt(document.getElementById("min").value);
+            let max = parseInt(document.getElementById("max").value);
+            let numeroAleatorio = Math.floor(Math.random() * (max - min + 1)) + min;
+            document.getElementById("resultado").innerText = "Número aleatorio: " + numeroAleatorio;
         }
     </script>
+
 </body>
 </html>
