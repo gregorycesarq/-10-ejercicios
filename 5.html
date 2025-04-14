@@ -6,15 +6,25 @@
     <title>Contador de Vocales</title>
 </head>
 <body>
+
     <h1>Contador de Vocales</h1>
-    <input type="text" id="vocalesInput" placeholder="Escribe un texto">
-    <button onclick="alert(contarVocales(document.getElementById('vocalesInput').value))">Contar vocales</button>
+    <input type="text" id="texto" placeholder="Escribe un texto">
+    <button onclick="contarVocales()">Contar Vocales</button>
+    <p id="resultado"></p>
 
     <script>
-        function contarVocales(texto) {
-            const vocales = texto.match(/[aeiou]/gi);
-            return vocales ? vocales.length : 0;
+        function contarVocales() {
+            let texto = document.getElementById("texto").value;
+            let vocales = "aeiouAEIOU";
+            let contador = 0;
+            for (let i = 0; i < texto.length; i++) {
+                if (vocales.includes(texto[i])) {
+                    contador++;
+                }
+            }
+            document.getElementById("resultado").innerText = "Número de vocales: " + contador;
         }
     </script>
+
 </body>
 </html>
