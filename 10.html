@@ -3,22 +3,31 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Números Impares</title>
+    <title>Ordenamiento de Array</title>
 </head>
 <body>
-    <h1>Números Impares</h1>
-    <button onclick="alert(numerosImpares(10))">Impares hasta 10</button>
+
+    <h1>Ordenamiento de Array</h1>
+    <input type="text" id="array" placeholder="Introduce números separados por coma">
+    <select id="orden">
+        <option value="asc">Ascendente</option>
+        <option value="desc">Descendente</option>
+    </select>
+    <button onclick="ordenarArray()">Ordenar</button>
+    <p id="resultado"></p>
 
     <script>
-        function numerosImpares(n) {
-            const impares = [];
-            for (let i = 1; i <= n; i++) {
-                if (i % 2 !== 0) {
-                    impares.push(i);
-                }
+        function ordenarArray() {
+            let array = document.getElementById("array").value.split(',').map(Number);
+            let orden = document.getElementById("orden").value;
+            if (orden === 'asc') {
+                array.sort((a, b) => a - b);
+            } else {
+                array.sort((a, b) => b - a);
             }
-            return impares;
+            document.getElementById("resultado").innerText = "Array ordenado: " + array.join(", ");
         }
     </script>
+
 </body>
 </html>
