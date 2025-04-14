@@ -3,18 +3,27 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Verificador de Palíndromos</title>
+    <title>Verificador de Palíndromo</title>
 </head>
 <body>
-    <h1>Verificador de Palíndromos</h1>
-    <input type="text" id="palindromoInput" placeholder="Escribe una palabra">
-    <button onclick="alert(esPalindromo(document.getElementById('palindromoInput').value))">Verificar</button>
+
+    <h1>Verificador de Palíndromo</h1>
+    <input type="text" id="cadena" placeholder="Ingresa una cadena">
+    <button onclick="verificarPalindromo()">Verificar</button>
+    <p id="resultado"></p>
 
     <script>
-        function esPalindromo(texto) {
-            const textoLimpiado = texto.toLowerCase().replace(/[^a-z0-9]/g, '');
-            return textoLimpiado === textoLimpiado.split('').reverse().join('');
+        function verificarPalindromo() {
+            let cadena = document.getElementById("cadena").value;
+            let cadenaLimpiada = cadena.replace(/[^a-zA-Z0-9]/g, '').toLowerCase();
+            let cadenaInvertida = cadenaLimpiada.split('').reverse().join('');
+            if (cadenaLimpiada === cadenaInvertida) {
+                document.getElementById("resultado").innerText = "Es un palíndromo";
+            } else {
+                document.getElementById("resultado").innerText = "No es un palíndromo";
+            }
         }
     </script>
+
 </body>
 </html>
