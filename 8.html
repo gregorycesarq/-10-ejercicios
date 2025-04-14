@@ -3,17 +3,22 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Inversor de Cadena</title>
+    <title>Inversión de Cadena</title>
 </head>
 <body>
-    <h1>Inversor de Cadena</h1>
-    <input type="text" id="invertirInput" placeholder="Escribe una cadena">
-    <button onclick="alert(invertirCadena(document.getElementById('invertirInput').value))">Invertir</button>
+
+    <h1>Inversión de Cadena</h1>
+    <input type="text" id="cadena" placeholder="Introduce una cadena">
+    <button onclick="invertirCadena()">Invertir</button>
+    <p id="resultado"></p>
 
     <script>
-        function invertirCadena(cadena) {
-            return cadena.split('').reverse().join('');
+        function invertirCadena() {
+            let cadena = document.getElementById("cadena").value;
+            let cadenaInvertida = cadena.split('').reverse().join('');
+            document.getElementById("resultado").innerText = "Cadena invertida: " + cadenaInvertida;
         }
     </script>
+
 </body>
 </html>
