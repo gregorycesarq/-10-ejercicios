@@ -3,20 +3,34 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Conversor de Grados</title>
+    <title>Convertidor de Temperatura</title>
 </head>
 <body>
-    <h1>Conversor de Grados</h1>
-    <button onclick="alert(convertirGrados(100, 'C'))">100°C a °F</button>
+
+    <h1>Convertidor de Temperatura</h1>
+    <label for="temperatura">Valor: </label>
+    <input type="number" id="temperatura">
+    <label for="unidad">Unidad (C o F): </label>
+    <input type="text" id="unidad" maxlength="1">
+    <button onclick="convertirTemperatura()">Convertir</button>
+    <p id="resultado"></p>
 
     <script>
-        function convertirGrados(grados, tipo) {
-            if (tipo === 'C') {
-                return (grados * 9/5) + 32; // Celsius a Fahrenheit
+        function convertirTemperatura() {
+            let valor = parseFloat(document.getElementById("temperatura").value);
+            let unidad = document.getElementById("unidad").value;
+            let resultado;
+            if (unidad === 'C') {
+                resultado = (valor * 9/5) + 32; // Celsius a Fahrenheit
+                document.getElementById("resultado").innerText = valor + "°C = " + resultado + "°F";
+            } else if (unidad === 'F') {
+                resultado = (valor - 32) * 5/9; // Fahrenheit a Celsius
+                document.getElementById("resultado").innerText = valor + "°F = " + resultado + "°C";
             } else {
-                return (grados - 32) * 5/9; // Fahrenheit a Celsius
+                document.getElementById("resultado").innerText = "Unidad no válida";
             }
         }
     </script>
+
 </body>
 </html>
